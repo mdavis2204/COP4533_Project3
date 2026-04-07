@@ -1,8 +1,8 @@
 input_file = "example1/example1.in"
 output_file = "example1/example1.out"
 
-def read_inputs():
-    with open("tests/" + input_file, "r") as f:
+def read_inputs(read_input_file=input_file):
+    with open("tests/" + read_input_file, "r") as f:
         # Read the first line to get the number of letters
         num_letters = int(f.readline())
 
@@ -56,7 +56,25 @@ def HighestValLCS(A, B, values):
 
     return optVal, optSubseq
 
+def question1():
+    times = []
+    for i in range(1, 11):
+        q1_file = "non_triv" + str(i) + "/" + "non_triv" + str(i) + ".in"
+        num_letters, values, stringA, stringB = read_inputs(q1_file)
+
+        from datetime import datetime
+
+        time_before = datetime.now()
+        HighestValLCS(stringA, stringB, values)
+        time_after = datetime.now()
+
+        times.append((time_after - time_before).total_seconds())
+
+    return times;
+
 if __name__ == '__main__':
+    # print(question1())
+
     num_letters, values, stringA, stringB = read_inputs()
     optVal, optSubseq = HighestValLCS(stringA, stringB, values)
     print(optVal)
