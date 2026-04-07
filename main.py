@@ -1,8 +1,10 @@
-input_file = "examples/example1.in"
-output_file = "examples/example1.out"
+import sys
 
-def read_inputs(read_input_file=input_file):
-    with open("tests/" + read_input_file, "r") as f:
+default_input_file = "examples/example1.in"
+default_output_file = "examples/example1.out"
+
+def read_inputs(read_input_file=default_input_file):
+    with open(read_input_file, "r") as f:
         # Read the first line to get the number of letters
         num_letters = int(f.readline())
 
@@ -75,7 +77,9 @@ def question1():
 if __name__ == '__main__':
     # print(question1())
 
-    num_letters, values, stringA, stringB = read_inputs()
+    input_file = sys.argv[1] if len(sys.argv) > 1 else default_input_file
+
+    num_letters, values, stringA, stringB = read_inputs(input_file)
     optVal, optSubseq = HighestValLCS(stringA, stringB, values)
     print(optVal)
     print(optSubseq)
