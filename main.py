@@ -1,5 +1,5 @@
-input_file = "example1/example1.in"
-output_file = "example1/example1.out"
+input_file = "examples/example1.in"
+output_file = "examples/example1.out"
 
 def read_inputs(read_input_file=input_file):
     with open("tests/" + read_input_file, "r") as f:
