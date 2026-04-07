@@ -18,4 +18,4 @@ Assumptions:
 * Every character in both strings will exist in the given alphabet/dictionary
 * For testing non-trivial cases for question 1 we made the given alphabet continuous with the actual alphabet
 
-Answer File: ["COP4533_Project3.pdf"]("COP4533_Project3.pdf")
+Answer File: ["COP4533_Project3.pdf"](COP4533_Project3.pdf)
