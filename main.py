@@ -45,9 +45,9 @@ def HighestValLCS(A, B, values):
     def backtrack(i, j):
         if i == 0 or j == 0:
             return ''
-        if A[i-1] == B[j-1] and dp[i][j] == values[A[i-1]] + dp[i-1][j-1]:
+        if A[i-1] == B[j-1] and OPT(i, j) == values[A[i-1]] + OPT(i-1, j-1):
             return backtrack(i-1, j-1) + A[i-1]
-        elif dp[i-1][j] >= dp[i][j-1]:
+        elif OPT(i-1, j) >= OPT(i, j-1):
             return backtrack(i-1, j)
         else:
             return backtrack(i, j-1)
